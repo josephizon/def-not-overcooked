@@ -2,6 +2,7 @@
 A game created with a similar gameplay loop as overcooked made in partial fulfillment of hte GDEV42 Course. 
 
 **How To Run** 
+
 Run the wb64devkit and locate the folder containing raylib and other game scripts and assets using
 ```
 cd ../Raylib
