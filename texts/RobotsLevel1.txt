@@ -1,0 +1,99 @@
+IMAGE_NAME assets/tilesheet.png
+TILE_COUNT 18
+85 0 16 16 false
+85 17 16 16 false
+153 17 16 16 false
+0 0 16 16 true
+17 0 16 16 true
+34 0 16 16 true
+51 0 16 16 true
+68 0 16 16 true
+0 17 16 16 true
+17 17 16 16 true
+34 17 16 16 true
+51 17 16 16 true
+68 17 16 16 true
+0 34 16 16 true
+17 34 16 16 true
+34 34 16 16 true
+51 34 16 16 true
+68 34 16 16 true
+GRID 16 9
+ 1   1   0   1   1   0   1   2   2   0   0   1   1   0   1   1
+ 0   1   5   7   0   0   1   2   2   1   0   0   5   7   1   0
+ 0   0  10  12   0   1   0   2   2   0   1   1  10  12   1   0
+ 0   1  10  12   1   0   2   2   2   0   0   1  10  12   0   0
+ 0   0  10  12   1   0   2   2   2   2   1   1  10  12   0   1
+ 1   1  10  12   0   0   2   2   2   0   0   1  10  12   0   1
+ 0   1  10  12   1   0   1   2   2   2   0   1  10  12   0   0
+ 1   1  15  17   0   0   1   2   2   2   0   0  15  17   1   0
+ 1   1   0   1   1   0   1   1   2   0   0   1   1   0   1   1
+PLAYER_POSITION 640 500
+ENEMY_POSITIONS
+500 500
+500 100
+1100 500
+
+----------------------------------------------------------------
+Copy Paste Into main.cpp
+    // SETUP AND LOAD TILE MAP
+    tileSheet tileMap(5, "RobotsLevel1.txt");
+    tileMap.setupTileMap();
+
+    // Players Inialization
+    std::vector<Player> players;
+
+    Player player1({tileMap.returnPlayerPosition().x, tileMap.returnPlayerPosition().y }, 30.0f, 250.0f, 1, player_one_binds); //640 360
+    Player player2({tileMap.returnPlayerPosition().x + 100, tileMap.returnPlayerPosition().y }, 30.0f, 250.0f, 2, player_two_binds); //640 360
+
+    players.push_back(player);
+    //players.push_back(player2);
+    
+    //Enemy Inialization
+    //int enemy_count = tileMap.returnEnemyCount();
+    std::vector<Enemy> enemies;
+    std::vector<Vector2> enemy_positions = tileMap.returnEnemyPositions();
+
+    //Enemy enemy01(enemy_positions[0], 100.0f, 15.0f, 100.0f, 250.0f, 50.0f, 2);
+    //Enemy enemy02(enemy_positions[1], 100.0f, 15.0f, 100.0f, 250.0f, 50.0f, 2);
+    //Enemy enemy03(enemy_positions[2], 100.0f, 15.0f, 100.0f, 250.0f, 50.0f, 2);
+
+    //enemies.push_back(enemy01);
+
+    // Station Initialization
+    Station station({605, 305}, {70, 70});
+    ScoreSystem ScoreSystem({605, 5}, {70, 70});
+
+    // Spawner Initialization
+    std::vector<Spawner> spawners;
+
+    Spawner spawner01({328.5, 105.5}, {65, 61}, "circular-frame");
+    Spawner spawner02({885.5, 175.5}, {65, 61}, "box-frame" );
+    Spawner spawner03({328.5, 255.5}, {65, 61}, "arm" );
+    Spawner spawner04({885.5, 325.5}, {65, 61}, "wing" );
+    Spawner spawner05({328.5, 405.5}, {65, 61}, "gun" );
+    Spawner spawner06({885.5, 475.5}, {65, 61}, "bulb" );
+    Spawner spawner07({328.5, 555.5}, {65, 61}, "micro" );
+
+    spawners.push_back(spawner01);
+    spawners.push_back(spawner02);
+    spawners.push_back(spawner03);
+    spawners.push_back(spawner04);
+    spawners.push_back(spawner05);
+    spawners.push_back(spawner06);
+    spawners.push_back(spawner07);
+
+----------------------------------------------------------------
+Extra Notes:
+- First Three Sets are grass flooring
+- The rest are flowers from left to right, top to bottom
+- Additional Flowers starting from 17 to 19
+- Only Walkable areas are the grass
+- Flowers = Obstacles 
+- Water = Walls
+
+- TILE_COUNT -> no. of reference tiles to sprite sheet
+- BONUS: true or false value is for adding whether or not that tile has collision
+- GRID X Y -> overall grid size (width by height)
+- PLAYER_POSITION -> changes player spawn point
+- ENEMY_POSITIONS -> changes spawn points of each enemy 

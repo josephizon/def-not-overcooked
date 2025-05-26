@@ -1,0 +1,118 @@
+IMAGE_NAME assets/tilesheet.png
+TILE_COUNT 20
+0 0 16 16 true
+17 0 16 16 true
+85 17 16 16 false
+51 0 16 16 true
+68 0 16 16 true
+85 0 16 16 false
+0 17 16 16 true
+17 17 16 16 true
+34 17 16 16 true
+51 17 16 16 true
+68 17 16 16 true
+85 17 16 16 false
+0 34 16 16 true
+153 17 16 16 false
+34 34 16 16 true
+51 34 16 16 true
+68 34 16 16 true
+51 119 16 16 true
+51 170 16 16 true
+51 221 16 16 true
+GRID 16 9
+11  11   5   5   8   0   0   1   0   9   6  16   5  11  13  13
+13  13   5   5  14  15   7   9   1   6  16   5   5  13  13  13
+13  13  13  13   5   5   8   0   9  10   5   5  13  13  13  13
+13  13  13  13  13   5  14   7   1  10   5   5  13  13  13  13
+ 2   5  13  13  13  13   5   8   9  12   4   5   5  13  13  11
+ 5   5  11  13  13  13  11  14  15   7  12   3   4   5  13   2
+ 3   4   5   5  13  13  13   5   5  14  15   7  12   4   5   2
+ 9  12   4   5  11  13  13  13   5   5   5   8   9  12   3   3
+ 9   9  10  11   5  13  13  13   5   5   5   8   0   1   1   9
+PLAYER_POSITION 400 300
+ENEMY_POSITIONS
+500 500
+500 100
+1100 500
+
+----------------------------------------------------------------
+Copy Paste Into main.cpp
+    // SETUP AND LOAD TILE MAP
+    tileSheet tileMap(5, "RobotsLevel2.txt");
+    tileMap.setupTileMap();
+
+    Vector2 v1 = {275, 50};     // Start
+    Vector2 v2 = {1500, 50};    // Bigger S Curve: {1500, 60}    Smaller Curve: {750, 50}
+    Vector2 v3 = {-100, 250};   // Bigger S Curve: {-100, 200}   Smaller Curve: {500, 250}
+    Vector2 v4 = {825, 250};    // End
+    std::vector<Vector2> cpv = {v1, v2, v3, v4};
+    tileMap.AddBezierCurver(3, 100, 4, cpv, 5);
+
+    v1 = {1160, 515};       // Start
+    v2 = {1150, 650};
+    v3 = {1025, 675};
+    v4 = {850, 640};        // End
+    cpv = {v1, v2, v3, v4};
+    tileMap.AddBezierCurver(3, 100, 4, cpv, 5);
+
+    // Players Inialization
+    std::vector<Player> players;
+
+    Player player({tileMap.returnPlayerPosition()}, 30.0f, 250.0f, 5); //640 360
+    //Player player2({500, 500}, 30.0f, 250.0f, 5); //640 360
+
+    players.push_back(player);
+    //players.push_back(player2);
+    
+    //Enemy Inialization
+    //int enemy_count = tileMap.returnEnemyCount();
+    std::vector<Enemy> enemies;
+    std::vector<Vector2> enemy_positions = tileMap.returnEnemyPositions();
+
+    //Enemy enemy01(enemy_positions[0], 100.0f, 15.0f, 100.0f, 250.0f, 50.0f, 2);
+    //Enemy enemy02(enemy_positions[1], 100.0f, 15.0f, 100.0f, 250.0f, 50.0f, 2);
+    //Enemy enemy03(enemy_positions[2], 100.0f, 15.0f, 100.0f, 250.0f, 50.0f, 2);
+
+    //enemies.push_back(enemy01);   
+
+    // Station Initialization
+    Station station({245, 325}, {70, 70});
+    ScoreSystem ScoreSystem({1125, 5}, {70, 70});
+
+    // Spawner Initialization
+    std::vector<Spawner> spawners;
+
+    Spawner spawner01({407.5, 174.5}, {65, 61}, "circular-frame");
+    Spawner spawner02({647.5, 489.5}, {65, 61}, "box-frame" );
+    Spawner spawner03({247.5, 649.5}, {65, 61}, "arm" );
+    Spawner spawner04({487.5, 329.5}, {65, 61}, "wing" );
+    Spawner spawner05({647.5, 69.5}, {65, 61}, "gun" );
+    Spawner spawner06({7.5, 409.5}, {65, 61}, "bulb" );
+    Spawner spawner07({167.5, 89.5}, {65, 61}, "micro" );
+
+    spawners.push_back(spawner01);
+    spawners.push_back(spawner02);
+    spawners.push_back(spawner03);
+    spawners.push_back(spawner04);
+    spawners.push_back(spawner05);
+    spawners.push_back(spawner06);
+    spawners.push_back(spawner07);
+
+----------------------------------------------------------------
+Extra Notes:
+- These notes should not be read by the code
+- The tile sheet is read from left to right then top to bottom
+-  0  1  2  3  4  5
+-  6  7  8  9  10 11
+-  12 13 14 15 16 
+- Additional Flowers starting from 17 to 19
+- Only Walkable areas are the grass
+- Flowers = Obstacles 
+- Water = Walls
+
+- TILE_COUNT -> no. of reference tiles to sprite sheet
+- BONUS: true or false value is for adding whether or not that tile has collision
+- GRID X Y -> overall grid size (width by height)
+- PLAYER_POSITION -> changes player spawn point
+- ENEMY_POSITIONS -> changes spawn points of each enemy 
