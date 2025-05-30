@@ -1,5 +1,5 @@
 # Not Overcooked
-A game created with a similar gameplay loop as overcooked made in partial fulfillment of hte GDEV42 Course. 
+A game created with a similar gameplay loop as Overcooked made in partial fulfillment of the GDEV42 Course. 
 
 **How To Run** 
 
