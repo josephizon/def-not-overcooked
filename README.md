@@ -3,16 +3,16 @@ A game created with a similar gameplay loop as Overcooked, made in partial fulfi
 
 ## How To Run Locally (_playable via [itch.io](https://josephizon.itch.io/notovercooked) too_)
 
-1. Run the wb64devkit and locate the folder containing raylib and other game scripts and assets using...<br>
-`cd ../[folder_name]`
+1. Run the wb64devkit and locate the folder containing raylib and other game scripts and assets using:<br>
+- `cd ../[folder_name]`
 
-2. Run the following command in the compiler to compile the game...<br>
-`g++ Main.cpp -o out -I raylib/ -L raylib/ -lraylib -lopengl32 -lgdi32 -lwinmm`
+2. Run the following command in the compiler to compile the game:<br>
+- `g++ Main.cpp -o out -I raylib/ -L raylib/ -lraylib -lopengl32 -lgdi32 -lwinmm`
 
-3. Run the game via either of the following commands...<br>
-`./out` <br>
+3. Run the game via either of the following commands:<br>
+- `./out` <br>
 or<br>
-`out`
+- `out`
 
 
 ## Controls
