@@ -1,4 +1,4 @@
-# Not Overcooked
+# Definitely Not Overcooked
 A game created with a similar gameplay loop as Overcooked, made in partial fulfillment of the GDEV42 Course. This game was made with C++ and the Raylib Library. 
 
 ## How To Run
