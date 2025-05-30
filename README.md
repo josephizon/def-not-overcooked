@@ -5,12 +5,12 @@ A game created with a similar gameplay loop as Overcooked, made in partial fulfi
 
 1. Run the wb64devkit and locate the folder containing raylib and other game scripts and assets using...
 
-`cd ../[folder_name]`
+- `cd ../[folder_name]`
 
 2. Run the following command in the compiler to compile the game...
-```
-g++ Main.cpp -o out -I raylib/ -L raylib/ -lraylib -lopengl32 -lgdi32 -lwinmm
-```
+
+- `g++ Main.cpp -o out -I raylib/ -L raylib/ -lraylib -lopengl32 -lgdi32 -lwinmm`
+
 3. Run the game via either of the following commands...
 ```
 ./out
