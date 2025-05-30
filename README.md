@@ -38,7 +38,7 @@ A game created with a similar gameplay loop as Overcooked, made in partial fulfi
 5. Deliver the freshly made robot into the delivery station by dropping it there.
 6. Rack as many points as you can!
 
-### Improvements from First Game
+## Improvements from First Game
 
 ***StateMachines***<br>
 Implemented StateMachines for all Entities: Players, Enemies, Stations, Scoring Systems, and Items. Player Actions now cause the Player 
@@ -47,7 +47,7 @@ to swap between different states, making transitions from certain states to anot
 ***Tile Sheet***<br>
 Map is now created through a tilesheet used to create multiple tilemaps stored into individual text files for ease of access and switching. Old Map was only one full background with manually placed colliders.
 
-### New Game Features:
+## New Game Features:
 
 ***Simple Scene Management***<br>
 The Game involves a simple enum based scene manager to switch between scenes to be drawn. The different levels are loaded in with one function just replacing the parameters to create the 3 different levels.
