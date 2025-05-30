@@ -10,9 +10,7 @@ A game created with a similar gameplay loop as Overcooked, made in partial fulfi
 - `g++ Main.cpp -o out -I raylib/ -L raylib/ -lraylib -lopengl32 -lgdi32 -lwinmm`
 
 3. Run the game via either of the following commands:<br>
-- `./out` <br>
-or<br>
-- `out`
+- `./out` or `out`
 
 
 ## Controls
