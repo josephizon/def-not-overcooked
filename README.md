@@ -1,7 +1,7 @@
 # Not Overcooked
-A game created with a similar gameplay loop as Overcooked made in partial fulfillment of the GDEV42 Course. 
+A game created with a similar gameplay loop as Overcooked, made in partial fulfillment of the GDEV42 Course. This game was made with C++ and the Raylib Library. 
 
-**How To Run** 
+## How To Run
 
 Run the wb64devkit and locate the folder containing raylib and other game scripts and assets using
 ```
@@ -19,7 +19,7 @@ or
 out
 ```
 
-# Controls
+## Controls
 **Player1**<br>
 WASD - Movement
 E - Pick Up/Drop
@@ -32,7 +32,7 @@ I - Pick Up/Drop
 L - Interact/Spawn Item
 Dot - Dash/Dodge
 
-# Main Goal
+## Main Goal
 1 - Gather components by spawning them from the certain chests in the map. 
 2 - Place all three components onto the crafting station and hold the interact button until the new component is produced. 
 3 - Recipes are based on given orders on the upper left of the screen. 
