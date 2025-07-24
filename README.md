@@ -69,3 +69,11 @@ A camera that zooms in on one player and tracks them as they move through the st
 ***Dash/Dodge Mechanic***<br>
 Dashing/Dodging allows for players to avoid enemies as they attempt to hit the player. However, 
 there is a 20% chance for the player to drop the held item. 
+
+## Sample Screenshots 
+<img width="1920" height="1077" alt="image" src="https://github.com/user-attachments/assets/94b65bb5-ef29-417e-bc51-6aeb4fc5d3f9" />
+<img width="1920" height="1080" alt="Screenshot (24)" src="https://github.com/user-attachments/assets/c5a50c2b-3d17-4fd0-a9b9-dde8369a4d17" />
+<img width="1920" height="1080" alt="Screenshot (1)" src="https://github.com/user-attachments/assets/f233682e-1f1a-446a-bf66-0112f34b2ef0" />
+<img width="1920" height="1080" alt="Screenshot (27)" src="https://github.com/user-attachments/assets/e0537523-a2dd-4aae-b091-21016dc04da0" />
+<img width="1920" height="1080" alt="Screenshot (26)" src="https://github.com/user-attachments/assets/b83c56b3-5eb6-48db-bfcf-c426e53d740b" />
+
